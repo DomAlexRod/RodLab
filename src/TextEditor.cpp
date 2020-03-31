@@ -20,7 +20,8 @@ std::string TextEditor::processResult(std::string cmd)
 	stream = _popen(cmd.c_str(), "r");
 	if (stream) {
 		while (!feof(stream))
-			if (fgets(buffer, max_buffer, stream) != NULL) data.append(buffer);
+			if (fgets(buffer, max_buffer, stream) != NULL) 
+			    data.append(buffer);
 		_pclose(stream);
 	}
 	return data;
